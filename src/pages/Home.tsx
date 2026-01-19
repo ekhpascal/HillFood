@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { getVersionString } from '@/utils/version'
 
 export default function Home() {
   return (
@@ -34,6 +35,10 @@ export default function Home() {
         >
           Add New Recipe
         </Link>
+      </div>
+
+      <div className="mt-8 text-sm text-gray-400">
+        v{getVersionString()}
       </div>
     </div>
   )
