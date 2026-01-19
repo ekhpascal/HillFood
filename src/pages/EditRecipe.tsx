@@ -8,7 +8,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 export default function EditRecipe() {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   const [loading, setLoading] = useState(false)
   const [loadingRecipe, setLoadingRecipe] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -27,6 +27,7 @@ export default function EditRecipe() {
     image_url: ''
   })
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null)
+  const [touchStartY, setTouchStartY] = useState<number | null>(null)
 
   useEffect(() => {
     loadRecipe()
@@ -126,13 +127,45 @@ export default function EditRecipe() {
     const draggedItem = newInstructions[draggedIndex]
     newInstructions.splice(draggedIndex, 1)
     newInstructions.splice(index, 0, draggedItem)
-    
+
     setFormData({ ...formData, instructions: newInstructions })
     setDraggedIndex(index)
   }
 
   const handleDragEnd = () => {
     setDraggedIndex(null)
+  }
+
+  // Touch event handlers for mobile
+  const handleTouchStart = (e: React.TouchEvent, index: number) => {
+    setDraggedIndex(index)
+    setTouchStartY(e.touches[0].clientY)
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (draggedIndex === null || touchStartY === null) return
+    
+    const touch = e.touches[0]
+    const element = document.elementFromPoint(touch.clientX, touch.clientY)
+    const instructionDiv = element?.closest('[data-instruction-index]')
+    
+    if (instructionDiv) {
+      const newIndex = parseInt(instructionDiv.getAttribute('data-instruction-index') || '0')
+      if (newIndex !== draggedIndex) {
+        const newInstructions = [...formData.instructions]
+        const draggedItem = newInstructions[draggedIndex]
+        newInstructions.splice(draggedIndex, 1)
+        newInstructions.splice(newIndex, 0, draggedItem)
+        
+        setFormData({ ...formData, instructions: newInstructions })
+        setDraggedIndex(newIndex)
+      }
+    }
+  }
+
+  const handleTouchEnd = () => {
+    setDraggedIndex(null)
+    setTouchStartY(null)
   }
 
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -340,15 +373,15 @@ export default function EditRecipe() {
                   <select
                     value={ingredient.unit}
                     onChange={(e) => updateIngredient(index, 'unit', e.target.value)}
-                    className="w-16 flex-shrink-0 px-1 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm bg-white"
+                    className="w-14 flex-shrink-0 px-1 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-xs bg-white"
                   >
                     <option value="g">g</option>
                     <option value="kg">kg</option>
                     <option value="ml">ml</option>
                     <option value="l">l</option>
-                    <option value="tsk">tsk</option>
-                    <option value="spsk">spsk</option>
-                    <option value="styk">styk</option>
+                    <option value="tsk">{language === 'da' ? 'tsk' : 'tsp'}</option>
+                    <option value="spsk">{language === 'da' ? 'spsk' : 'tbsp'}</option>
+                    <option value="styk">{language === 'da' ? 'styk' : 'pcs'}</option>
                     <option value="">-</option>
                   </select>
                   <input
@@ -409,17 +442,23 @@ export default function EditRecipe() {
           </div>
           <div className="space-y-2">
             {formData.instructions.map((instruction, index) => (
-              <div 
-                key={index} 
-                className="flex gap-2 items-start"
+              <div
+                key={index}
+                data-instruction-index={index}
                 draggable
                 onDragStart={() => handleDragStart(index)}
                 onDragOver={(e) => handleDragOver(e, index)}
                 onDragEnd={handleDragEnd}
+                onTouchStart={(e) => handleTouchStart(e, index)}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                className={`flex gap-2 items-start cursor-move ${
+                  draggedIndex === index ? 'opacity-50' : ''
+                }`}
+                style={{ touchAction: 'none' }}
               >
-                <div className="flex items-center gap-2 mt-2 cursor-move">
-                  <span className="text-gray-400">☰</span>
-                  <span className="text-sm font-medium text-gray-500 min-w-[20px]">{index + 1}.</span>
+                <div className="flex items-center justify-center w-6 h-10 text-gray-400 cursor-move">
+                  ⋮⋮
                 </div>
                 <textarea
                   value={instruction}
