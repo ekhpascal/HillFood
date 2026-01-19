@@ -273,63 +273,69 @@ export default function AddRecipe() {
               {t('add.addIngredient')}
             </button>
           </div>
-          <div className="space-y-2">
+          <div className="space-y-3">
             {formData.ingredients.map((ingredient, index) => (
-              <div key={index} className="flex gap-1 md:gap-2 items-start">
-                <input
-                  type="text"
-                  value={ingredient.amount}
-                  onChange={(e) => updateIngredient(index, 'amount', e.target.value)}
-                  placeholder="2"
-                  className="w-12 md:w-16 px-1 md:px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-center text-sm"
-                />
-                <select
-                  value={ingredient.unit}
-                  onChange={(e) => updateIngredient(index, 'unit', e.target.value)}
-                  className="w-14 md:w-20 px-1 md:px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-xs md:text-sm"
-                >
-                  <option value="g">g</option>
-                  <option value="kg">kg</option>
-                  <option value="ml">ml</option>
-                  <option value="l">l</option>
-                  <option value="tsk">tsk</option>
-                  <option value="spsk">spsk</option>
-                  <option value="styk">styk</option>
-                  <option value="">-</option>
-                </select>
-                <input
-                  type="text"
-                  value={ingredient.name}
-                  onChange={(e) => updateIngredient(index, 'name', e.target.value)}
-                  placeholder="flour"
-                  className="flex-1 min-w-0 px-2 md:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
-                />
-                <select
-                  value={ingredient.category || ''}
-                  onChange={(e) => updateIngredient(index, 'category', e.target.value)}
-                  className="w-24 md:w-32 px-1 md:px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-xs md:text-sm"
-                  title="Kategori"
-                >
-                  <option value="">Diverse</option>
-                  <option value="Kød">Kød</option>
-                  <option value="Grønt">Grønt</option>
-                  <option value="Frugt">Frugt</option>
-                  <option value="Mejeri">Mejeri</option>
-                  <option value="Brød">Brød</option>
-                  <option value="Tørvarer">Tørvarer</option>
-                  <option value="Frost">Frost</option>
-                  <option value="Drikkevarer">Drikkevarer</option>
-                  <option value="Krydderier">Krydderier</option>
-                </select>
-                <button
-                  type="button"
-                  onClick={() => removeIngredient(index)}
-                  disabled={formData.ingredients.length === 1}
-                  className="px-2 md:px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg transition flex-shrink-0 disabled:opacity-30 disabled:cursor-not-allowed"
-                  title="Remove ingredient"
-                >
-                  🗑️
-                </button>
+              <div key={index} className="p-3 border border-gray-200 rounded-lg bg-gray-50">
+                {/* Row 1: Amount, Unit, Name */}
+                <div className="flex gap-2 mb-2">
+                  <input
+                    type="text"
+                    value={ingredient.amount}
+                    onChange={(e) => updateIngredient(index, 'amount', e.target.value)}
+                    placeholder="2"
+                    className="w-14 flex-shrink-0 px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-center text-sm bg-white"
+                  />
+                  <select
+                    value={ingredient.unit}
+                    onChange={(e) => updateIngredient(index, 'unit', e.target.value)}
+                    className="w-16 flex-shrink-0 px-1 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm bg-white"
+                  >
+                    <option value="g">g</option>
+                    <option value="kg">kg</option>
+                    <option value="ml">ml</option>
+                    <option value="l">l</option>
+                    <option value="tsk">tsk</option>
+                    <option value="spsk">spsk</option>
+                    <option value="styk">styk</option>
+                    <option value="">-</option>
+                  </select>
+                  <input
+                    type="text"
+                    value={ingredient.name}
+                    onChange={(e) => updateIngredient(index, 'name', e.target.value)}
+                    placeholder="flour"
+                    className="flex-1 min-w-0 px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm bg-white"
+                  />
+                </div>
+                {/* Row 2: Category and Delete */}
+                <div className="flex gap-2 items-center">
+                  <label className="text-xs text-gray-600">Kategori:</label>
+                  <select
+                    value={ingredient.category || ''}
+                    onChange={(e) => updateIngredient(index, 'category', e.target.value)}
+                    className="flex-1 px-2 py-1.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm bg-white"
+                  >
+                    <option value="">Diverse</option>
+                    <option value="Kød">Kød</option>
+                    <option value="Grønt">Grønt</option>
+                    <option value="Frugt">Frugt</option>
+                    <option value="Mejeri">Mejeri</option>
+                    <option value="Brød">Brød</option>
+                    <option value="Tørvarer">Tørvarer</option>
+                    <option value="Frost">Frost</option>
+                    <option value="Drikkevarer">Drikkevarer</option>
+                    <option value="Krydderier">Krydderier</option>
+                  </select>
+                  <button
+                    type="button"
+                    onClick={() => removeIngredient(index)}
+                    disabled={formData.ingredients.length === 1}
+                    className="px-3 py-1.5 text-red-600 hover:bg-red-50 rounded-lg transition disabled:opacity-30 disabled:cursor-not-allowed"
+                    title="Fjern"
+                  >
+                    🗑️
+                  </button>
+                </div>
               </div>
             ))}
           </div>
