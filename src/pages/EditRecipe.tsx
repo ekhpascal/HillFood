@@ -51,7 +51,6 @@ export default function EditRecipe() {
           category: recipe.category,
           image_url: recipe.image_url || ''
         })
-        setOriginalImageUrl(recipe.image_url || '')
       }
     } catch (err: any) {
       setError(err.message || 'Failed to load recipe')
