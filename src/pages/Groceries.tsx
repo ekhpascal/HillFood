@@ -3,7 +3,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { useAuth } from '@/contexts/AuthContext'
 import * as groceryService from '@/services/groceryService'
 
-const CATEGORIES = ['dairy', 'bakery', 'meat', 'fruit', 'vegetables', 'frozen', 'misc']
+const CATEGORIES = ['Mejeri', 'Brød', 'Kød', 'Frugt', 'Grønt', 'Frost', 'Tørvarer', 'Drikkevarer', 'Krydderier', 'diverse']
 
 type GroceryList = groceryService.GroceryList & { items: groceryService.GroceryItem[] }
 

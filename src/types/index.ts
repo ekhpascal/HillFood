@@ -2,6 +2,7 @@ export interface Ingredient {
   amount: string
   unit: string
   name: string
+  category?: string
 }
 
 export interface Note {

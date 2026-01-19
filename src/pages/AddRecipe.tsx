@@ -50,7 +50,7 @@ export default function AddRecipe() {
     setFormData({ ...formData, ingredients: [...formData.ingredients, { amount: '', unit: 'g', name: '' }] })
   }
 
-  const updateIngredient = (index: number, field: 'amount' | 'unit' | 'name', value: string) => {
+  const updateIngredient = (index: number, field: 'amount' | 'unit' | 'name' | 'category', value: string) => {
     const newIngredients = [...formData.ingredients]
     newIngredients[index][field] = value
     setFormData({ ...formData, ingredients: newIngredients })
@@ -292,9 +292,9 @@ export default function AddRecipe() {
                   <option value="kg">kg</option>
                   <option value="ml">ml</option>
                   <option value="l">l</option>
-                  <option value="tsp">tsp</option>
-                  <option value="tbsp">tbsp</option>
-                  <option value="pcs">pcs</option>
+                  <option value="tsk">tsk</option>
+                  <option value="spsk">spsk</option>
+                  <option value="styk">styk</option>
                   <option value="">-</option>
                 </select>
                 <input
@@ -304,6 +304,23 @@ export default function AddRecipe() {
                   placeholder="flour"
                   className="flex-1 min-w-0 px-2 md:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-sm"
                 />
+                <select
+                  value={ingredient.category || ''}
+                  onChange={(e) => updateIngredient(index, 'category', e.target.value)}
+                  className="w-24 md:w-32 px-1 md:px-2 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-xs md:text-sm"
+                  title="Kategori"
+                >
+                  <option value="">Diverse</option>
+                  <option value="Kød">Kød</option>
+                  <option value="Grønt">Grønt</option>
+                  <option value="Frugt">Frugt</option>
+                  <option value="Mejeri">Mejeri</option>
+                  <option value="Brød">Brød</option>
+                  <option value="Tørvarer">Tørvarer</option>
+                  <option value="Frost">Frost</option>
+                  <option value="Drikkevarer">Drikkevarer</option>
+                  <option value="Krydderier">Krydderier</option>
+                </select>
                 <button
                   type="button"
                   onClick={() => removeIngredient(index)}

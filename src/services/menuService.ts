@@ -149,6 +149,7 @@ interface ScaledIngredient {
   unit: string
   originalAmount: number
   scaledAmount: number
+  category?: string
 }
 
 function parseAmount(amountStr: string | undefined | null): number {
@@ -242,7 +243,8 @@ export async function generateShoppingList(menuId: string, listName?: string) {
           amount: ingredient.amount,
           unit: ingredient.unit,
           originalAmount,
-          scaledAmount
+          scaledAmount,
+          category: ingredient.category
         })
       }
     }
@@ -256,13 +258,13 @@ export async function generateShoppingList(menuId: string, listName?: string) {
   console.log('Created grocery list:', groceryList)
 
   // Add items to grocery list
-  // Try to categorize based on item memory or default to 'misc'
+  // Use ingredient category if set, otherwise try item memory, fallback to 'diverse'
   const itemMemory = await groceryService.getItemMemory()
 
   for (const [, ingredient] of scaledIngredients) {
     const formattedAmount = formatAmount(ingredient.scaledAmount)
     const itemName = `${formattedAmount}${ingredient.unit} ${ingredient.name}`
-    const category = itemMemory[ingredient.name.toLowerCase()] || 'misc'
+    const category = ingredient.category || itemMemory[ingredient.name.toLowerCase()] || 'diverse'
     
     console.log('Adding grocery item:', itemName, 'category:', category)
 
