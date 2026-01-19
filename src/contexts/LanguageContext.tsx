@@ -59,6 +59,15 @@ const translations = {
     'detail.ingredients': 'Ingredienser',
     'detail.instructions': 'Fremgangsmåde',
     'detail.tips': 'Tips & Tricks',
+    'detail.clearChecks': 'Ryd alle afkrydsninger',
+    'detail.notes': 'Observationer & Oplevelser',
+    'detail.notesPlaceholder': 'Skriv dine observationer, erfaringer eller justeringer til opskriften...',
+    'detail.addNote': 'Tilføj Observation',
+    'detail.savingNote': 'Gemmer...',
+    'detail.deleteNote': 'Slet observation',
+    'detail.deleteNoteConfirm': 'Er du sikker på, at du vil slette denne observation?',
+    'detail.noNotes': 'Ingen observationer endnu. Tilføj dine erfaringer med opskriften!',
+    'detail.image': 'Billede',
     
     // Add recipe
     'add.title': 'Tilføj Ny Opskrift',
@@ -85,6 +94,31 @@ const translations = {
     'edit.title': 'Rediger Opskrift',
     'edit.save': 'Gem Ændringer',
     
+    // Groceries
+    'groceries.title': 'Indkøbslister',
+    'groceries.newList': 'Ny Liste',
+    'groceries.createList': 'Opret Ny Indkøbsliste',
+    'groceries.listNamePlaceholder': 'F.eks. Weekendindkøb',
+    'groceries.create': 'Opret',
+    'groceries.items': 'varer',
+    'groceries.noLists': 'Ingen indkøbslister endnu. Opret din første!',
+    'groceries.backToLists': 'Tilbage til lister',
+    'groceries.addItemPlaceholder': 'Tilføj vare...',
+    'groceries.add': 'Tilføj',
+    'groceries.noItems': 'Ingen varer på listen endnu',
+    'groceries.deleteListConfirm': 'Er du sikker på, at du vil slette denne liste?',
+    'groceries.completed': 'Udført',
+    'groceries.selectCategory': 'Vælg Kategori',
+    'groceries.quantity': 'Antal',
+    'groceries.changeCategory': 'Skift kategori',
+    'groceries.category.dairy': 'Mejeri',
+    'groceries.category.bakery': 'Bageri',
+    'groceries.category.meat': 'Kød',
+    'groceries.category.fruit': 'Frugt',
+    'groceries.category.vegetables': 'Grøntsager',
+    'groceries.category.frozen': 'Frost',
+    'groceries.category.misc': 'Diverse',
+    
     // Categories
     'category.mainCourse': 'Hovedret',
     'category.sideDish': 'Tilbehør',
@@ -98,6 +132,7 @@ const translations = {
     'common.loading': 'Indlæser...',
     'common.error': 'Fejl',
     'common.required': '*',
+    'common.cancel': 'Annuller',
   },
   en: {
     // Navigation
@@ -147,6 +182,15 @@ const translations = {
     'detail.ingredients': 'Ingredients',
     'detail.instructions': 'Instructions',
     'detail.tips': 'Tips & Tricks',
+    'detail.clearChecks': 'Clear all checkmarks',
+    'detail.notes': 'Observations & Experiences',
+    'detail.notesPlaceholder': 'Write your observations, experiences, or adjustments to the recipe...',
+    'detail.addNote': 'Add Observation',
+    'detail.savingNote': 'Saving...',
+    'detail.deleteNote': 'Delete observation',
+    'detail.deleteNoteConfirm': 'Are you sure you want to delete this observation?',
+    'detail.noNotes': 'No observations yet. Add your experiences with this recipe!',
+    'detail.image': 'Image',
     
     // Add recipe
     'add.title': 'Add New Recipe',
@@ -173,6 +217,31 @@ const translations = {
     'edit.title': 'Edit Recipe',
     'edit.save': 'Save Changes',
     
+    // Groceries
+    'groceries.title': 'Grocery Lists',
+    'groceries.newList': 'New List',
+    'groceries.createList': 'Create New Grocery List',
+    'groceries.listNamePlaceholder': 'E.g. Weekend Shopping',
+    'groceries.create': 'Create',
+    'groceries.items': 'items',
+    'groceries.noLists': 'No grocery lists yet. Create your first one!',
+    'groceries.backToLists': 'Back to lists',
+    'groceries.addItemPlaceholder': 'Add item...',
+    'groceries.add': 'Add',
+    'groceries.noItems': 'No items on this list yet',
+    'groceries.completed': 'Completed',
+    'groceries.deleteListConfirm': 'Are you sure you want to delete this list?',
+    'groceries.selectCategory': 'Select Category',
+    'groceries.quantity': 'Quantity',
+    'groceries.changeCategory': 'Change category',
+    'groceries.category.dairy': 'Dairy',
+    'groceries.category.bakery': 'Bakery',
+    'groceries.category.meat': 'Meat',
+    'groceries.category.fruit': 'Fruit',
+    'groceries.category.vegetables': 'Vegetables',
+    'groceries.category.frozen': 'Frozen',
+    'groceries.category.misc': 'Misc',
+    
     // Categories
     'category.mainCourse': 'Main Course',
     'category.sideDish': 'Side Dish',
@@ -186,6 +255,7 @@ const translations = {
     'common.loading': 'Loading...',
     'common.error': 'Error',
     'common.required': '*',
+    'common.cancel': 'Cancel',
   }
 }
 

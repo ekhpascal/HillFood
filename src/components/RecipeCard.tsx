@@ -11,13 +11,6 @@ export default function RecipeCard({ recipe }: RecipeCardProps) {
       to={`/recipes/${recipe.id}`}
       className="block bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
     >
-      {recipe.image_url && (
-        <img
-          src={recipe.image_url}
-          alt={recipe.title}
-          className="w-full h-48 object-cover"
-        />
-      )}
       <div className="p-4">
         <h3 className="text-xl font-semibold text-gray-800 mb-2">
           {recipe.title}

@@ -4,6 +4,12 @@ export interface Ingredient {
   name: string
 }
 
+export interface Note {
+  id: string
+  content: string
+  created_at: string
+}
+
 export interface Recipe {
   id: string
   title: string
@@ -11,6 +17,7 @@ export interface Recipe {
   ingredients: Ingredient[]
   instructions: string[]
   tips?: string
+  notes?: Note[]
   prep_time: number
   cook_time: number
   servings: number
