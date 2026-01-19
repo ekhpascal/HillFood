@@ -20,9 +20,9 @@ export default function Navigation() {
   }
 
   return (
-    <nav className="bg-white shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className="bg-white shadow-sm overflow-x-hidden">
+      <div className="container mx-auto px-4 max-w-full">
+        <div className="flex items-center justify-between h-16 gap-2">
           <div className="flex items-center gap-3">
             <Link to="/" className="text-xl md:text-2xl font-bold text-primary-600">
               HillFood
