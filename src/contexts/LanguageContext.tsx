@@ -14,6 +14,9 @@ const translations = {
     'nav.home': 'Hjem',
     'nav.recipes': 'Opskrifter',
     'nav.add': 'Tilføj',
+    'nav.menus': 'Menuer',
+    'nav.groceries': 'Indkøb',
+    'nav.settings': 'Indstillinger',
     'nav.signOut': 'Log ud',
     
     // Home page
@@ -93,6 +96,9 @@ const translations = {
     'nav.home': 'Home',
     'nav.recipes': 'Recipes',
     'nav.add': 'Add',
+    'nav.menus': 'Menus',
+    'nav.groceries': 'Groceries',
+    'nav.settings': 'Settings',
     'nav.signOut': 'Sign Out',
     
     // Home page

@@ -7,6 +7,9 @@ import Recipes from './pages/Recipes'
 import AddRecipe from './pages/AddRecipe'
 import RecipeDetail from './pages/RecipeDetail'
 import Auth from './pages/Auth'
+import Menus from './pages/Menus'
+import Groceries from './pages/Groceries'
+import Settings from './pages/Settings'
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path="/menus" element={<Menus />} />
+          <Route path="/groceries" element={<Groceries />} />
+          <Route path="/settings" element={<Settings />} />
         </Routes>
       </Layout>
     </LanguageProvider>
