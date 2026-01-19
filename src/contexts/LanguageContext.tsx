@@ -128,11 +128,31 @@ const translations = {
     'category.snack': 'Snack',
     'category.beverage': 'Drik',
     
+    // Menus
+    'menus.title': 'Mine Menuer',
+    'menus.createMenu': 'Opret Menu',
+    'menus.menuNamePlaceholder': 'Fx: Ugens Menu, Søndag Middag...',
+    'menus.create': 'Opret',
+    'menus.deleteConfirm': 'Er du sikker på, at du vil slette denne menu?',
+    'menus.recipes': 'opskrifter',
+    'menus.servings': 'personer',
+    'menus.noMenus': 'Ingen menuer endnu. Opret en menu for at komme i gang!',
+    'menus.backToMenus': 'Tilbage til Menuer',
+    'menus.addRecipe': 'Tilføj Opskrift',
+    'menus.courseType': 'Rettype',
+    'menus.course.starter': 'Forret',
+    'menus.course.main': 'Hovedret',
+    'menus.course.dessert': 'Dessert',
+    'menus.noRecipesInCourse': 'Ingen opskrifter i denne kategori',
+    'menus.generateShoppingList': 'Opret Indkøbsliste',
+    'menus.shoppingListCreated': 'Indkøbsliste oprettet',
+    
     // Common
     'common.loading': 'Indlæser...',
     'common.error': 'Fejl',
     'common.required': '*',
     'common.cancel': 'Annuller',
+    'auth.loginRequired': 'Du skal være logget ind for at bruge denne funktion',
   },
   en: {
     // Navigation
@@ -242,6 +262,25 @@ const translations = {
     'groceries.category.frozen': 'Frozen',
     'groceries.category.misc': 'Misc',
     
+    // Menus
+    'menus.title': 'My Menus',
+    'menus.createMenu': 'Create Menu',
+    'menus.menuNamePlaceholder': 'E.g.: Weekly Menu, Sunday Dinner...',
+    'menus.create': 'Create',
+    'menus.deleteConfirm': 'Are you sure you want to delete this menu?',
+    'menus.recipes': 'recipes',
+    'menus.servings': 'servings',
+    'menus.noMenus': 'No menus yet. Create a menu to get started!',
+    'menus.backToMenus': 'Back to Menus',
+    'menus.addRecipe': 'Add Recipe',
+    'menus.courseType': 'Course Type',
+    'menus.course.starter': 'Starter',
+    'menus.course.main': 'Main Course',
+    'menus.course.dessert': 'Dessert',
+    'menus.noRecipesInCourse': 'No recipes in this course',
+    'menus.generateShoppingList': 'Generate Shopping List',
+    'menus.shoppingListCreated': 'Shopping list created',
+    
     // Categories
     'category.mainCourse': 'Main Course',
     'category.sideDish': 'Side Dish',
@@ -255,8 +294,7 @@ const translations = {
     'common.loading': 'Loading...',
     'common.error': 'Error',
     'common.required': '*',
-    'common.cancel': 'Cancel',
-  }
+    'common.cancel': 'Cancel',    'auth.loginRequired': 'You need to be logged in to use this feature',  }
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
