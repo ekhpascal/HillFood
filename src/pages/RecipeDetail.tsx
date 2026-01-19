@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, Link } from 'react-router-dom'
 import { recipeService } from '@/services/recipeService'
 import { Recipe, Ingredient } from '@/types'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -116,12 +116,20 @@ export default function RecipeDetail() {
                 {recipe.category}
               </span>
             </div>
-            <button
-              onClick={handleDelete}
-              className="px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition"
-            >
-              {t('detail.delete')}
-            </button>
+            <div className="flex gap-2">
+              <Link
+                to={`/recipes/${recipe.id}/edit`}
+                className="px-4 py-2 text-primary-600 hover:bg-primary-50 rounded-lg transition"
+              >
+                {t('detail.edit')}
+              </Link>
+              <button
+                onClick={handleDelete}
+                className="px-4 py-2 text-red-600 hover:bg-red-50 rounded-lg transition"
+              >
+                {t('detail.delete')}
+              </button>
+            </div>
           </div>
 
           <p className="text-lg text-gray-700 mb-6">{recipe.description}</p>

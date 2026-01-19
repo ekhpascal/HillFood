@@ -46,6 +46,7 @@ const translations = {
     
     // Recipe detail
     'detail.backToRecipes': '← Tilbage til Opskrifter',
+    'detail.edit': 'Rediger',
     'detail.delete': 'Slet',
     'detail.deleteConfirm': 'Er du sikker på, at du vil slette denne opskrift?',
     'detail.preparationTime': 'Forberedelsestid:',
@@ -76,6 +77,10 @@ const translations = {
     'add.submit': 'Gem Opskrift',
     'add.submitting': 'Gemmer...',
     'add.cancel': 'Annuller',
+    
+    // Edit recipe
+    'edit.title': 'Rediger Opskrift',
+    'edit.save': 'Gem Ændringer',
     
     // Categories
     'category.mainCourse': 'Hovedret',
@@ -127,8 +132,7 @@ const translations = {
     'recipe.minutes': 'min',
     
     // Recipe detail
-    'detail.backToRecipes': '← Back to Recipes',
-    'detail.delete': 'Delete',
+    'detail.backToRecipes': '← Back to Recipes',    'detail.edit': 'Edit',    'detail.delete': 'Delete',
     'detail.deleteConfirm': 'Are you sure you want to delete this recipe?',
     'detail.preparationTime': 'Preparation time:',
     'detail.cookingTime': 'Cooking time:',
@@ -158,6 +162,10 @@ const translations = {
     'add.submit': 'Save Recipe',
     'add.submitting': 'Saving...',
     'add.cancel': 'Cancel',
+    
+    // Edit recipe
+    'edit.title': 'Edit Recipe',
+    'edit.save': 'Save Changes',
     
     // Categories
     'category.mainCourse': 'Main Course',
