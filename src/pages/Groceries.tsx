@@ -182,23 +182,23 @@ export default function Groceries() {
     }
   }
 
-  const deleteItem = async (itemId: string) => {
-    if (!selectedList) return
+  // const deleteItem = async (itemId: string) => {
+  //   if (!selectedList) return
 
-    try {
-      await groceryService.deleteGroceryItem(itemId)
+  //   try {
+  //     await groceryService.deleteGroceryItem(itemId)
 
-      const updatedList = {
-        ...selectedList,
-        items: selectedList.items.filter(item => item.id !== itemId)
-      }
+  //     const updatedList = {
+  //       ...selectedList,
+  //       items: selectedList.items.filter(item => item.id !== itemId)
+  //     }
 
-      setLists(lists.map(list => list.id === selectedList.id ? updatedList : list))
-      setSelectedList(updatedList)
-    } catch (error) {
-      console.error('Error deleting item:', error)
-    }
-  }
+  //     setLists(lists.map(list => list.id === selectedList.id ? updatedList : list))
+  //     setSelectedList(updatedList)
+  //   } catch (error) {
+  //     console.error('Error deleting item:', error)
+  //   }
+  // }
 
   const deleteList = async (listId: string) => {
     if (!confirm(t('groceries.deleteListConfirm'))) return

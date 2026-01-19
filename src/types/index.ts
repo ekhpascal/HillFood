@@ -40,6 +40,7 @@ export interface RecipeFormData {
   ingredients: Ingredient[]
   instructions: string[]
   tips?: string
+  notes?: Note[]
   prep_time: number
   cook_time: number
   servings: number

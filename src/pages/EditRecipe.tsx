@@ -13,7 +13,6 @@ export default function EditRecipe() {
   const [loadingRecipe, setLoadingRecipe] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [uploading, setUploading] = useState(false)
-  const [originalImageUrl, setOriginalImageUrl] = useState('')
 
   const [formData, setFormData] = useState<RecipeFormData>({
     title: '',
