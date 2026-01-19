@@ -58,6 +58,7 @@ const translations = {
     'detail.people': 'personer',
     'detail.ingredients': 'Ingredienser',
     'detail.instructions': 'Fremgangsmåde',
+    'detail.tips': 'Tips & Tricks',
     
     // Add recipe
     'add.title': 'Tilføj Ny Opskrift',
@@ -77,6 +78,8 @@ const translations = {
     'add.submit': 'Gem Opskrift',
     'add.submitting': 'Gemmer...',
     'add.cancel': 'Annuller',
+    'add.tips': 'Tips & Tricks (valgfri)',
+    'add.tipsPlaceholder': 'Tilføj nyttige tips, tricks eller variationer til opskriften...',
     
     // Edit recipe
     'edit.title': 'Rediger Opskrift',
@@ -143,6 +146,7 @@ const translations = {
     'detail.people': 'people',
     'detail.ingredients': 'Ingredients',
     'detail.instructions': 'Instructions',
+    'detail.tips': 'Tips & Tricks',
     
     // Add recipe
     'add.title': 'Add New Recipe',
@@ -161,6 +165,8 @@ const translations = {
     'add.addInstruction': '+ Add Step',
     'add.submit': 'Save Recipe',
     'add.submitting': 'Saving...',
+    'add.tips': 'Tips & Tricks (optional)',
+    'add.tipsPlaceholder': 'Add useful tips, tricks, or variations for this recipe...',
     'add.cancel': 'Cancel',
     
     // Edit recipe

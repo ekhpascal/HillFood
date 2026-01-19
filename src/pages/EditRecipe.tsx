@@ -20,6 +20,7 @@ export default function EditRecipe() {
     description: '',
     ingredients: [{ amount: '', unit: 'g', name: '' }],
     instructions: [''],
+    tips: '',
     prep_time: 0,
     cook_time: 0,
     servings: 4,
@@ -44,6 +45,7 @@ export default function EditRecipe() {
           description: recipe.description,
           ingredients: recipe.ingredients?.length ? recipe.ingredients : [{ amount: '', unit: 'g', name: '' }],
           instructions: recipe.instructions?.length ? recipe.instructions : [''],
+          tips: recipe.tips || '',
           prep_time: recipe.prep_time,
           cook_time: recipe.cook_time,
           servings: recipe.servings,
@@ -416,6 +418,19 @@ export default function EditRecipe() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            {t('add.tips')}
+          </label>
+          <textarea
+            value={formData.tips || ''}
+            onChange={(e) => setFormData({ ...formData, tips: e.target.value })}
+            rows={3}
+            placeholder={t('add.tipsPlaceholder')}
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+          />
         </div>
 
         <div className="flex gap-4 pt-4">

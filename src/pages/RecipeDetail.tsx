@@ -202,6 +202,15 @@ export default function RecipeDetail() {
                 ))}
               </ol>
             </div>
+
+            {recipe.tips && (
+              <div className="mt-8 p-6 bg-yellow-50 border-l-4 border-yellow-400 rounded-lg">
+                <h2 className="text-xl font-bold text-gray-900 mb-3 flex items-center gap-2">
+                  💡 {t('detail.tips')}
+                </h2>
+                <p className="text-gray-700 whitespace-pre-line">{recipe.tips}</p>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -10,6 +10,7 @@ export interface Recipe {
   description: string
   ingredients: Ingredient[]
   instructions: string[]
+  tips?: string
   prep_time: number
   cook_time: number
   servings: number
@@ -31,6 +32,7 @@ export interface RecipeFormData {
   description: string
   ingredients: Ingredient[]
   instructions: string[]
+  tips?: string
   prep_time: number
   cook_time: number
   servings: number
